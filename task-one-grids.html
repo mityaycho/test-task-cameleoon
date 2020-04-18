@@ -1,0 +1,156 @@
+<body>
+	<div class="grid">
+		<header>HEADER</header>
+		<nav>NAVIGATION</nav>
+		<aside>SIDEBAR</aside>
+		<div class="content">CONTENT AREA</div>
+		<div class="viewed">People Who Viewed This Item Also Viewed</div>
+		<article>
+			<div class="product">
+				<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+				<p>name</p>
+				<p>price</p>
+			</div>
+			<div class="product">
+				<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+				<p>name</p>
+				<p>price</p>
+			</div>
+			<div class="product">
+				<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+				<p>name</p>
+				<p>price</p>
+			</div>
+		</article>
+		<div class="bought">
+			<div class="bought-text">People Who Bought This Also Bought</div>
+			<div class="container-bought">
+				<div class="product">
+					<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+					<p>name</p>
+					<p>price</p>
+				</div>
+				<div class="product">
+					<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+					<p>name</p>
+					<p>price</p>
+				</div>
+				<div class="product">
+					<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+					<p>name</p>
+					<p>price</p>
+				</div>
+				<div class="product">
+					<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+					<p>name</p>
+					<p>price</p>
+				</div>
+				<div class="product">
+					<img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="">
+					<p>name</p>
+					<p>price</p>
+				</div>
+			</div>
+		</div>
+		<footer>FOOTER</footer>
+	</div>
+
+	<style>
+		.grid {
+			display: grid;
+			grid-gap: 10px;
+			grid-template-areas:
+				"header"
+				"nav"
+				".viewed"
+				"aside"
+				".content"
+				"article"
+				".bought"
+				"footer";
+		}
+
+		.product {
+			display: grid;
+			justify-items: center;
+		}
+
+		img {
+			border-radius: 10px;
+			width: 50px;
+			height: 50px;
+		}
+
+		header {
+			grid-area: header;
+			height: 100px;
+		}
+
+		nav {
+			grid-area: nav;
+		}
+
+		aside {
+			grid-area: aside;
+		}
+
+		.content {
+			grid-area: content;
+		}
+
+		article {
+			grid-area: article;
+		}
+
+		.bought {
+			grid-area: bought;
+		}
+
+		.bought-text {
+			margin-bottom: 20px;
+		}
+
+		.container-bought {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+		footer {
+			grid-area: footer;
+			height: 100px;
+		}
+
+		.viewed {
+			grid-area: viewed;
+			font-size: 12px;
+			height: 100%;
+		}
+
+		.grid>* {
+			background-color: #6c6e75;
+			border: 1px solid #212941;
+			border-radius: 5px;
+			padding: 8px 15px;
+			color: #ffffff;
+			font-size: 18px;
+			font-family: roboto;
+		}
+
+		.grid>*:nth-child(odd) {
+			background-color: #6c6e75;
+		}
+
+		@media (min-width: 640px) {
+			.grid {
+				grid-template-columns: 1fr 6fr 1fr;
+				grid-template-areas:
+					"header header header"
+					"nav nav viewed"
+					"aside content article"
+					"bought bought bought"
+					"footer footer footer"
+			}
+		}
+	</style>
+
+</body>
